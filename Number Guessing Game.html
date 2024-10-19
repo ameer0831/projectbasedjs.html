@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Number Guessing Game</title>
+        <style>@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+            body{
+                background-image: linear-gradient( 108.7deg,  rgb(62, 223, 215) 11%, rgb(10, 123, 151) 88.2% );
+                font-family: 'Poppins', sans-serif;
+                
+            }
+            .container {
+                max-width: 600px;
+                margin: 0 auto;
+                padding: 20px;
+                background-color: aliceblue;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+                position: fixed;
+                box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+                border-radius: 1rem;
+                padding: 0 4rem 0 4rem;
+                margin: 6rem 0 0 34rem;
+            
+              }
+              
+              h1 {
+                text-align: center;
+                font-size: 26px;
+                margin-bottom: 10px;
+                color: #f019ec;
+              }
+              
+              .game {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+              }
+              
+              p {
+                font-size: 17px;
+                margin-bottom: 20px;
+                color: #6f16be;
+              }
+              
+              input {
+                padding: 10px;
+                border-radius: .8rem;
+                border: 2px solid #6f16be;
+                margin-bottom: 20px;
+                box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+                color:#6f16be;
+                outline: none;
+                
+              }
+              
+              button {
+                color: #fff;
+                border: none;
+                padding: 10px 20px;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                background-image: linear-gradient( 108.7deg,  rgb(99, 197, 221) 11%, rgb(57, 94, 212) 88.2% );
+                font-weight: bold;
+                
+              }
+            button:hover{
+              transform: scale(1.1);
+            }
+              #result {
+                font-size: 24px;
+                margin-top: 20px;
+              }</style>
+	</head>
+	<body>
+	<div class="container">
+  <h1>Number Guessing Game</h1>
+  <div class="game">
+    <p>Guess a number between 1 and 100:</p>
+    <input type="number" id="guess-input">
+    <button id="guess-btn">Guess</button>
+    <p id="result"></p>
+  </div>
+</div>
+
+<script>const guessInput = document.getElementById('guess-input');
+    const guessBtn = document.getElementById('guess-btn');
+    const result = document.getElementById('result');
+    
+    const randomNumber = Math.floor(Math.random() * 100) + 1;
+    
+    guessBtn.addEventListener('click', () => {
+      const guess = parseInt(guessInput.value);
+      if (isNaN(guess) || guess < 1 || guess > 100) {
+        result.textContent = 'Please enter a valid number between 1 and 100.';
+        result.style.fontSize= "1rem";
+        
+      } else if (guess === randomNumber) {
+        result.textContent = 'Congratulations! You guessed the number!';
+        result.style.fontSize= "1rem";
+      } else if (guess < randomNumber) {
+        result.textContent = 'Too low! Try again.';
+      } else {
+        resu
+</script>
+	</body>
+</html>
